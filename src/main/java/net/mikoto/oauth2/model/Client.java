@@ -1,5 +1,7 @@
 package net.mikoto.oauth2.model;
 
+import net.mikoto.oauth2.model.annotation.ForbiddenField;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -35,6 +37,7 @@ public class Client {
     @Column(name = "pk_client_id", nullable = false, unique = true)
     private int clientId;
     private String clientName;
+    @ForbiddenField
     private String clientSecret;
     private String allowUrl;
     private String contractScope;
