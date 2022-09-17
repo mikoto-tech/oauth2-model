@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author mikoto
  * Create for pixiv-core
  * Create at 2022/7/30
- * <p>
+ * <br/>
  * Sql:
  * <p>
  * create table pixiv.client
@@ -26,6 +26,7 @@ import java.util.Objects;
  *     constraint client_pk_client_id_uindex
  *         unique (pk_client_id)
  * );
+ * <p/>
  */
 @Entity
 @Table(name = "client")
