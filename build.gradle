@@ -1,0 +1,52 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+	id 'maven-publish'
+}
+
+group = 'net.mikoto'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+publishing {
+	publications {
+		gpr(MavenPublication) {
+			from components.java
+			pom {
+				name = "oauth2-model"
+				description = "Mikoto oauth2 model"
+				url = "https://mikoto.net.cn"
+				licenses {
+					license {
+						name = "GNU Affero General Public License v3.0"
+						url = "https://www.gnu.org/licenses/agpl-3.0.en.html"
+					}
+				}
+				developers {
+					developer {
+						id = "mikoto"
+						name = "Zhang keshun"
+						email = "mikoto@ungine.cn"
+					}
+				}
+			}
+		}
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.data:spring-data-commons:2.7.2'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
